@@ -39,10 +39,10 @@ services:
       dockerfile: Dockerfile-webserver
     container_name: nginx
     hostname: nginx
-    ports:
-      - "8080:8080" 
     depends_on:
       - app
+    ports:
+      - "8080:8080" 
     networks:
       - node-sql
 networks:

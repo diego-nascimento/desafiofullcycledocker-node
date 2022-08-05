@@ -10,9 +10,11 @@ export class listPeopleInfra implements IlistPeopleInfra{
 
       return new Promise((resolve, reject) => {
         connection.query(newPeopleQuery, [], function (error, result){
-          if(error) resolve([])
-          if(!result) resolve([])
-          resolve(JSON.parse(JSON.stringify(result))) 
+
+          if(error) return resolve([])
+          if(!result) return resolve([])
+          
+          return resolve(JSON.parse(JSON.stringify(result))) 
        })
       })
   }
